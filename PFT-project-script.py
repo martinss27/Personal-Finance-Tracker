@@ -1,4 +1,4 @@
-
+from datetime import datetime
 #using a list of dictionaries to store transactions
 transactions = [
     {"date": "2024-03-05", "amount": -50, "category": "Food"},
@@ -7,6 +7,13 @@ transactions = [
 ]
 
 #use merge sort to sort transactions by date. Stable algorithm, good for multiple transactions in a day
+
+def validate_date(date_str):
+    try:
+        datetime.strptime(date_str, "%Y-%m-%d")
+        return True
+    except ValueError:
+        return False
 
 def merge_sort(transactions):
     if len(transactions) <= 1:
@@ -70,11 +77,17 @@ while True:
     choice = input("Choose an option: ")
 
     if choice == "1":
-        date = input("Enter date (YYYY-MM-DD): ")
-        amount = float(input("Enter amount (+ for income, - for expense): "))
-        category = input("Enter category: ")
+        while True:
+            date = input('enter date(YYYY:MM:DD): ')
+            if validate_date(date):
+                break
+            print('invalid date format. Please enter in YYYY-MM-DD format.')
+
+        amount = float(input('enter amount(+ for income, - for expense): '))
+        category = input('Enter category: ')
+
         transactions.append({"date": date, "amount": amount, "category": category})
-        save_transactions(transactions)
+        save_transactions(transactions)    
 
     elif choice == "2":
         sorted_transactions = merge_sort(transactions)
