@@ -16,10 +16,9 @@ A **simple CLI-based expense and income tracker** that allows users to log trans
 
 ### 📌 **File Explanations**  
 
-- **`finance_tracker.py`** → The main script that runs the Personal Finance Tracker. It contains all the logic for sorting transactions, searching, and managing the menu.  
+- **`PFT-project-script.py`** → The main script that runs the Personal Finance Tracker. It contains all the logic for sorting transactions, searching, and managing the menu.  
 - **`transactions.csv`** → Stores user-entered transactions (date, amount, category) so data persists between sessions.  
 - **`README.md`** → Provides an overview of the project, including features, setup instructions, and future improvements.  
-- **`requirements.txt`** *(Optional)* → If you use any external libraries (like `pandas` or `matplotlib` in the future), this file helps install them using `pip install -r requirements.txt`.  
 
 
 ---
